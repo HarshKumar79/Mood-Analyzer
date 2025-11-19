@@ -253,11 +253,12 @@ function App() {
     // 2. Server-side Fallback
     setTimeout(async () => {
       try {
-        const res = await fetch('http://localhost:8000/predict', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text }),
-        });
+        const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+        const res = await fetch(`${API_URL}/predict`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
 
         if (!res.ok) {
           const err = await res.json();
