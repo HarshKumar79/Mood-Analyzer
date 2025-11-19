@@ -8,11 +8,15 @@ import pandas as pd
 from scipy import sparse
 from scipy.sparse import hstack
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # ---------- configuration ----------
-MODEL_PATH = "model/xgb_sentiment_model"
-VECTORIZER_PATH = "model/tfidf_vectorizer"
-LE_PATH = "model/label_encoder"
+MODEL_PATH = os.getenv("MODEL_PATH")
+VECTORIZER_PATH = os.getenv("VECTORIZER_PATH")
+LE_PATH = os.getenv("LE_PATH")
 # ---------- startup / load artifacts ----------
 app = FastAPI(title="Emotion Detection API")
 
