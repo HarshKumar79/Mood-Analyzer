@@ -60,7 +60,7 @@ def build_features_from_texts(series):
     df_f["char_len"] = s.str.len()
     df_f["word_count"] = s.str.split().apply(lambda x: len(x) if isinstance(x, list) else 0)
     df_f["exclaim"] = s.str.count("!")
-    df_f["question"] = s.str.count("\?")
+    df_f["question"] = s.str.count(r"\?")
     df_f["upper_ratio"] = s.apply(lambda x: sum(w.isupper() for w in x.split()) / (len(x.split()) + 1))
     return df_f
 
