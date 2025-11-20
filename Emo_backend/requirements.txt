@@ -8,3 +8,5 @@ numpy
 nltk
 scipy
 python-multipart
+os
+python-dotenv
