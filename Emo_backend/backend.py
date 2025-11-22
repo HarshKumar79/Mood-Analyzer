@@ -9,6 +9,9 @@ from scipy import sparse
 from scipy.sparse import hstack
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+import nltk
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 import os
 
 load_dotenv()

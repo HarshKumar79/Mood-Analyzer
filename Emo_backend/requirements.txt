@@ -9,3 +9,4 @@ nltk
 scipy
 python-multipart
 python-dotenv
+nltk
